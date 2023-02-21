@@ -1,17 +1,18 @@
 #include "main.h"
 
-/** print_alphabets - definition of print_alphabets prototype
+/**
+ * print_alphabets - definition of print_alphabets prototype
  * Return: void
  */
 
 void print_alphabet(void)
 {
-	char c = 'a';
+	char c;
 
-	while (c <= 'z')
+	for (c = 'a'; c <= 'z'; c++)
 	{
 		_putchar(c);
-		c++;
 	}
 	_putchar('\n');
+	return (0);
 }
