@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include "main.h"
+
 /** print_alphabets - definition of print_alphabets prototype
  * Return: void
  */
@@ -9,8 +10,8 @@ void print_alphabet(void)
 
 	while (c <= 'z')
 	{
-		putchar(c);
+		_putchar(c);
 		c++;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
