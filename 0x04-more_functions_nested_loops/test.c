@@ -1,23 +1,31 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * main - print a triangle 'size' times using #
+ * print_triangle - print a triangle 'size' times using #
+ * @size: size of the triangle
  * Return: void
  */
-void main(void)
+void print_triangle(int size)
 {
-	int size = 10;
 	int i;
 	int j;
+	int k;
 
-	for (i = size; i > size; i--)
+	for (i = 1; i <= size ; i++)
 	{
-		for (j = 0; j < size; j++)
+		for (j = size; j > 0; j--)
 		{
-			if (j == 1)
-				putchar('#');
-			else
-				putchar(' ');
+			if (j == i)
+			{
+				for (k = i; k > 0; k--)
+				{
+					_putchar('#');
+				}
+			}
+			else if (j > i)
+			{
+				_putchar(' ');
+			}
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
