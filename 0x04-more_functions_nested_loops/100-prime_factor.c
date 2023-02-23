@@ -7,7 +7,8 @@
 
 int main(void)
 {
-	printf("612852475143\n");
+	long int b = 612852475143;	
 	
+	printf("%ld\n", b);
 	return (0);
 }
