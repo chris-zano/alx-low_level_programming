@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 /**
  * main - a program that multiples two arguments
  * @argc: argument counter - returns number of args in cl
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("%s\n", "Error");
+		fprintf(stderr, "%s\n", "Error");
 		return (1);
 	}
 	return (0);
