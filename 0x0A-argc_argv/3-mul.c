@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
 	int result;
 
-	if (argc - 1 >= 1 && argc - 1 <= 2)
+	if (argc < 3 || argc > 3)
 	{
 		int a = atoi(argv[1]);
 		int b = atoi(argv[2]);
