@@ -70,6 +70,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	j = len2;
 	for (len2 = 0; len2 <= j; i++, len2++)
 		conStr[i] = s2[len2];
-	conStr[len + 1] = '\0';
 	return (conStr);
 }
