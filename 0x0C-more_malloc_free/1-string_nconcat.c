@@ -18,7 +18,6 @@ char *find_s2(char *s2, unsigned int i, unsigned int n)
 	l2 = strlen(s2);
 	if (n >= l2)
 	{
-		printf("n (%d) is greater or equal to length of s2 (%d)\n", n, l2);
 		return (s2);
 	}
 	else
