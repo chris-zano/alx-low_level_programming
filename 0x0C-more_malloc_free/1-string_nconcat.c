@@ -45,34 +45,31 @@ char *find_s2(char *s2, unsigned int i, unsigned int n)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int ls1;
-	unsigned int ls2;
-	unsigned int totlen;
-	unsigned int i, j;
-	char *ptr;
-	char *str2;
+	int len, len1, len2, i, j;
+	char *conStr;
 
+	i = 0;
+	s2 = find_s2(s2, i, n);
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+	for (len1 = 0; s1[len1] != '\0'; len1++)
+		;
+	for (len2 = 0; s2[len2] != '\0'; len2++)
+		;
+	len = len1 + len2;
+	conStr = malloc(sizeof(char) * (len + 1));
 
-	i = 0;
-	str2 = find_s2(s2, i, n);
-	ls1 = strlen(s1);
-	ls2 = strlen(str2);
-	totlen = ls1 + ls2 + 1;
-	ptr = malloc(sizeof(*ptr) * totlen);
-
-	if (ptr == NULL)
+	if (conStr == NULL)
 	{
-		free(ptr);
+		free(conStr);
 		return (NULL);
 	}
-	for (i = 0; i < ls1; i++)
-		ptr[i] = s1[i];
-	j = ls2;
-	for (ls2 = 0; ls2 <= j; i++, ls2++)
-		ptr[i] = s2[ls2];
-	return (ptr);
+	for (i = 0; i < len1; i++)
+		conStr[i] = s1[i];
+	j = len2;
+	for (len2 = 0; len2 <= j; i++, len2++)
+		conStr[i] = s2[len2];
+	return (conStr);
 }
