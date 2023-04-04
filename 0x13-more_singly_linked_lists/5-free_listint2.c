@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * free_listint - frees a listint_t list
+ * free_listint2 - frees a listint_t list
  * @head: head node of the list
  * Return: void
  */
