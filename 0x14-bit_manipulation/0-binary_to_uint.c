@@ -19,6 +19,7 @@ unsigned int binary_to_uint(const char *b)
 	/* return 0 is the array is empty */
 	if (b[i] == '\0')
 		return (0);
+
 	/* loop through the array */
 	for (i = 0; i < length; i++)
 	{
@@ -36,10 +37,7 @@ unsigned int binary_to_uint(const char *b)
 			sum += b[i] - '0';
 		}
 		else
-		{
-			/* b[i] is not 0 or 1 */
 			return (0);
-		}
 	}
 	return (sum);
 }
