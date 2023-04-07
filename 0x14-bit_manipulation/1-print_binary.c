@@ -8,11 +8,27 @@
  */
 void print_binary(unsigned long int n)
 {
-	printf("%lu\n", n);
+	int num_of_bits = 0;
+	unsigned long int copy_n = n;
 
-	if (n > 1)
-		print_binary(n >> 1);
+	if (copy_n == 0)
+	{
+		_putchar((copy_n & 1) + '0');
+	}
+	/* finding the number of bits in 'n' */
 
-	printf("%lu + %d => %lu\n", (n & 1), '0', ((n & 1) + '0'));
-	_putchar((n & 1) + '0');
+	while (copy_n > 0)
+	{
+		/* increment by 1 */
+		num_of_bits++;
+		/* right shift by 1 */
+		copy_n >>= 1;
+	}
+
+	/* Print binary representation of n */
+
+	while (num_of_bits-- > 0)
+	{
+		_putchar('0' + ((n >> num_of_bits) & 1));
+	}
 }
