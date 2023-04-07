@@ -30,7 +30,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 			 * sets the value of the bit at curr_pos to 0
 			 */
 
-			*n &= ^(1UL << curr_pos);
+			*n &= ^ (1UL << curr_pos);
 
 			/* return 1 */
 			return (bit | 1);
