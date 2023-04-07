@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stddef.h>
 
 /**
  * binary_to_uint - converts a binary number to an unsigned integer
@@ -18,6 +19,9 @@ unsigned int binary_to_uint(const char *b)
 
 	/* return 0 is the array is empty */
 	if (b[i] == '\0')
+		return (0);
+
+	if (b == NULL)
 		return (0);
 
 	/* loop through the array */
