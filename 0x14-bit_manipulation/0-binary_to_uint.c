@@ -17,7 +17,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int sum = 0;
 
 	/* return 0 if b is NULL */
-	if (b == NULL)
+	if (b == NULL || b[0] == '\0')
 		return (0);
 	/* return 0 id the array is empty */
 	if (length == 0)
