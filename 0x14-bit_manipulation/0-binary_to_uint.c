@@ -13,13 +13,22 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int length = strlen(b);
+	unsigned int length = 0;
 	unsigned int i = 0;
 	unsigned int sum = 0;
 
 	/* check for null input */
 	if (b == NULL)
 		return (0);
+
+	while (b[length] != '\0')
+	{
+		/* check for invalid characters */
+		if (b[length] != '0' && b[length] != '1')
+			return (0);
+		length++;
+	}
+
 	if (length == 0)
 		return (0);
 	/* loop through the array */
@@ -37,6 +46,10 @@ unsigned int binary_to_uint(const char *b)
 			 * add this to sum
 			 */
 			sum += b[i] - '0';
+		}
+		else
+		{
+			return (0);
 		}
 	}
 	return (sum);
