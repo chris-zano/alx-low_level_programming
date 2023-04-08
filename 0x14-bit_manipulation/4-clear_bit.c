@@ -27,7 +27,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		{
 			/**
 			 * if current position matches index
-			 * sets the value of the bit at curr_pos to 0
+			 * sets the value of the bit at curr_pos to 0 or 1
 			 */
 
 			*n &= ~(1UL << curr_pos);
