@@ -1,11 +1,11 @@
 #include "main.h"
+#include "union.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
  * get_endianness - checks endianness
  * Return: 0 if big endian, else 1
  */
-
 int get_endianness(void)
 {
 	/* set n at struct endian to 1 */

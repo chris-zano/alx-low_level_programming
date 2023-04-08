@@ -2,17 +2,6 @@
 #define MAIN_H
 #include <stdio.h>
 #include <stdlib.h>
-/**
- * union - a union data type with two members
- * @n: integer number
- * @c: an array of size sizeof(n)
- * Description - a union that holds an unteger and an array
- */
-union
-{
-	int n;
-	char c[sizeof(int)];
-} endian;
 
 int _putchar(char c);
 unsigned int binary_to_uint(const char *b);
