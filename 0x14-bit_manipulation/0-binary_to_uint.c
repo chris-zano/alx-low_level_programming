@@ -38,8 +38,6 @@ unsigned int binary_to_uint(const char *b)
 			 */
 			sum += b[i] - '0';
 		}
-		else
-			return (0);
 	}
 	return (sum);
 }
