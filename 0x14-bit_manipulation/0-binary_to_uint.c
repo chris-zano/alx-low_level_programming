@@ -17,13 +17,10 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int i = 0;
 	unsigned int sum = 0;
 
-	/* return 0 is the array is empty */
-	if (b[i] == '\0')
-		return (0);
-
 	/* check for null input */
 	if (b == NULL)
 		return (0);
+
 	/* loop through the array */
 	for (i = 0; i < length; i++)
 	{
