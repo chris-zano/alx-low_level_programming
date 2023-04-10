@@ -17,55 +17,6 @@ void display_type(unsigned int type_ELF, unsigned char *magic_num);
 void display_header(unsigned long int entry_ELF, unsigned char *magic_num);
 void close_elf(int elf);
 
-/**
- * main - Displays the information contained in the
- *        ELF header at the start of an ELF file.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
- * Return: 0 on success if the function fails - exit code 98
- */
-int main(int __attribute__((__unused__)) argc, char *argv[])
-{
-Elf64_Ehdr *header;
-int o, r;
-
-o = open(argv[1], O_RDONLY);
-if (o == -1)	
-{
-dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
-exit(98);
-}
-header = malloc(sizeof(Elf64_Ehdr));
-if (header == NULL)
-{
-close_elf(o);
-dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
-exit(98);
-}
-r = read(o, header, sizeof(Elf64_Ehdr));
-if (r == -1)
-{
-free(header);
-close_elf(o);
-dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
-exit(98);
-}
-
-_check_ELF(header->magic_num);
-printf("ELF Header:\n");
-display_magic(header->magic_num);
-display_class(header->magic_num);
-display_data(header->magic_num);
-display_version(header->magic_num);
-display_osabi(header->magic_num);
-display_abi(header->magic_num);
-display_type(header->type_ELF, header->magic_num);
-display_header(header->e_entry, header->magic_num);
-
-free(header);
-close_elf(o);
-return (0);
-}
 
 /**
  * _check_ELF - Checks if a file is an ELF file.
@@ -212,23 +163,24 @@ void display_abi(unsigned char *magic_num)
  */
 void display_type(unsigned int type_ELF, unsigned char *magic_num)
 {
-	if (magic_num[EI_DATA] == ELFDATA2MSB)
-		type_ELF >>= 8;
+    if (magic_num[EI_DATA] == ELFDATA2MSB)
+        type_ELF >>= 8;
 
-	printf("  Type:                              ");
+    printf("  Type:                              ");
 
-	if (type_ELF == ET_NONE)
-		printf("NONE (None)\n");
-	else if (type_ELF == ET_REL)
-		printf("REL (Relocatable file)\n");
-	else if (type_ELF == ET_EXEC)
-		printf("EXEC (Executable file)\n");
-	else if (type_ELF == ET_DYN)
-		printf("DYN (Shared object file)\n");
-	else if (type_ELF == ET_CORE)
-		printf("CORE (Core file)\n");
-	else 
-		printf("<unknown: %x>\n", type_ELF);
+    if (type_ELF == ET_NONE) {
+        printf("NONE (None)\n");
+    } else if (type_ELF == ET_REL) {
+        printf("REL (Relocatable file)\n");
+    } else if (type_ELF == ET_EXEC) {
+        printf("EXEC (Executable file)\n");
+    } else if (type_ELF == ET_DYN) {
+        printf("DYN (Shared object file)\n");
+    } else if (type_ELF == ET_CORE) {
+        printf("CORE (Core file)\n");
+    } else {
+        printf("<unknown: %x>\n", type_ELF);
+    }
 }
 
 
@@ -318,4 +270,3 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	close_elf(o);
 	return (0);
 }
-
