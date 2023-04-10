@@ -1,0 +1,11 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+display	101-elf_header.c	/^void display(const char* label, const char* value)$/;"	f	typeref:typename:void
+display_header	101-elf_header.c	/^void display_header(Elf64_Ehdr *header)$/;"	f	typeref:typename:void
+display_hex	101-elf_header.c	/^void display_hex(const char* label, unsigned char *hex, int len)$/;"	f	typeref:typename:void
+main	101-elf_header.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
