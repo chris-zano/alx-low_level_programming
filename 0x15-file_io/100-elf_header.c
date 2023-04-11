@@ -240,6 +240,12 @@ void close_elf(int elf)
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
+	if (argc != 2)
+	{
+		printf("Usage: %s <elf-file>\n", argv[0]);
+		exit(1);
+	}
+
 	Elf64_Ehdr *header;
 	int o, r;
 
@@ -264,6 +270,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
+
 	_is_elf(header->e_ident);
 	printf("ELF Header:\n");
 	magic_byte(header->e_ident);
