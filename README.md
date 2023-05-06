@@ -1,6 +1,6 @@
 # alx-low_level_programming
 
-## introduction to c prigramming language
+## introduction to c programming language
 
 ### In this course, we learn the following concept in c programming language: 
 
