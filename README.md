@@ -4,7 +4,7 @@ Here are the updated links:
 
 ### Introduction to C Programming Language
 
-In this course, we learn the following concept in C programming language: 
+In this course, we learn the following concepts in C programming language: 
 
 * [0x00-hello_world](https://github.com/chris-zano/alx-low_level_programming/tree/main/0x00-hello_world)
 * [0x01-variables_if_else_while](https://github.com/chris-zano/alx-low_level_programming/tree/main/0x01-variables_if_else_while)
